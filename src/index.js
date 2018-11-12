@@ -5,10 +5,7 @@ import RecordGalleryCard from './contexts/recordGalleryCard'
 export default class LongTextField extends React.Component {
 
     static propTypes = {
-        optionIds: PropTypes.arrayOf(PropTypes.string.isRequired),
-        options: PropTypes.shape({
-            options: PropTypes.arrayOf(PropTypes.string.isRequired)
-        })
+        value: PropTypes.string
     }
 
     render() {
