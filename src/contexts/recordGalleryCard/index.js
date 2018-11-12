@@ -1,0 +1,67 @@
+import React from 'react'
+import {css} from 'emotion'
+
+export default class RecordGalleryCard extends React.Component {
+
+    render() {
+
+        const {value} = this.props
+
+        return (
+            <div
+                className={css`
+                    font-size: 13px;
+                    height: 32px;
+                    padding: 0;
+                    margin: 0;
+                    vertical-align: top;
+                    background: white;
+                    color: #111111;
+                    cursor: default;
+                    outline: none;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-flex-wrap: wrap;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    cursor: pointer;
+                    background: transparent;
+                    text-overflow: ellipsis;
+                    overflow: visible;
+                    position: relative;
+                `}
+            >
+                <div
+                    className={css`
+                        flex: 1 1 auto;
+                        min-width: 0;
+                        min-height: 0;
+                        line-height: 1.5;
+                    `}
+                >
+                    <div
+                        className={css`
+                            overflow: hidden;
+                            position: relative;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                            text-overflow: -o-ellipsis-lastline;
+                            -webkit-line-clamp: 4;
+                            white-space: pre-wrap;
+                            word-wrap: break-word;
+                        `}
+                        style={{
+                            maxHeight: 78
+                        }}
+                    >
+                        {value}
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
