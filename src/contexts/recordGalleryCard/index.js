@@ -1,11 +1,11 @@
 import React from 'react'
 import {css} from 'emotion'
 
-export default class RecordGalleryCard extends React.Component {
+export default class LongTextField extends React.Component {
 
     render() {
 
-        const {value} = this.props
+        const {longText} = this.props
 
         return (
             <div
@@ -58,7 +58,7 @@ export default class RecordGalleryCard extends React.Component {
                             maxHeight: 78
                         }}
                     >
-                        {value}
+                        {longText}
                     </div>
                 </div>
             </div>

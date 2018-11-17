@@ -1,21 +1,45 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import RecordDetailReadOnly from './contexts/recordDetail/readOnly'
 import RecordGalleryCard from './contexts/recordGalleryCard'
+import RecordListItem from './contexts/recordListItem'
 
 export default class LongTextField extends React.Component {
 
     static propTypes = {
-        value: PropTypes.string
+        id: PropTypes.string.isRequired,
+        contextId: PropTypes.oneOf(['recordDetail', 'recordGridRow', 'recordGalleryCard', 'recordListItem']),
+        roleId: PropTypes.oneOf(['editor', 'readOnly']),
+        longText: PropTypes.string,
+        onChange: PropTypes.func
     }
 
     render() {
 
-        const {contextId} = this.props
+        const {contextId, roleId} = this.props
+
+        if (contextId === 'recordDetail' && roleId === 'readOnly') {
+
+            return (
+                <RecordDetailReadOnly
+                    {...this.props}
+                />
+            )
+        }
 
         if (contextId === 'recordGalleryCard') {
 
             return (
                 <RecordGalleryCard
+                    {...this.props}
+                />
+            )
+        }
+
+        if (contextId === 'recordListItem') {
+
+            return (
+                <RecordListItem
                     {...this.props}
                 />
             )
