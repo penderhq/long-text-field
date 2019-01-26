@@ -1,5 +1,7 @@
 # ![LongTextField](https://user-images.githubusercontent.com/44801418/48109954-32befe80-e27c-11e8-9848-d7e9860a4a8c.png) LongTextField
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/entercosmos/long-text-field.svg)](https://greenkeeper.io/)
+
 [![npm package][npm-badge]][npm]
 
 Used for entering multiple lines of text.
