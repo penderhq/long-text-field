@@ -1,5 +1,6 @@
 import React from 'react'
 import {css} from 'emotion'
+import replaceLinebreaks from '../../replaceLinebreaks'
 
 export default class LongTextField extends React.Component {
 
@@ -36,7 +37,7 @@ export default class LongTextField extends React.Component {
                             white-space: nowrap;
                         `}
                     >
-                        {longText}
+                        {replaceLinebreaks(longText)}
                     </div>
                 </div>
             </div>

@@ -12,113 +12,100 @@ injectGlobal`
     }
 `
 
-class Viewport extends React.Component {
-
-    render() {
-
-        return (
-            <div
-                className={css`
-                    background-color: #e9ebee;
-                    padding: 20px;
-                `}
-            >
-                {this.props.children}
-            </div>
-        )
-    }
-}
-
-const stringifyJSON = (args) => {
-    try {
-        return JSON.stringify(args, null, 2)
-    } catch (e) {
-        return null
-    }
-}
-
-const log = (name) => (args) => {
-    alert(`
-name: ${name}
-args: ${stringifyJSON(args)}
-    `)
-}
+const Context = ({contextId, roleId}) => (
+    <div
+        className={css`
+            margin-top: 32px;
+            margin-bottom: 24px;
+        `}
+    >
+        <strong>Context:</strong> {contextId}, <strong>Role:</strong> {roleId}
+    </div>
+)
 
 class Demo extends Component {
+
+    state = {
+        longText: "This is a long text.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit,\n\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n​\n\n​\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+
     render() {
         return <div>
             <h1>LongTextField Demo</h1>
             <p>Used for entering multiple lines of text.</p>
-            <h2>Context based</h2>
-            <p>The behaviour of the component changes based on the context in which it is rendered.</p>
-            <h3>
-                RecordDetail context
-            </h3>
-            <p>Used for displaying a long text in a record gallery card.</p>
-            <h4>
-                Read only role
-            </h4>
-            <Viewport>
-                <div
-                    className={css`
+            <h2>State</h2>
+            <pre>
+                {JSON.stringify(this.state, null, 2)}
+            </pre>
+            <Context contextId={'recordDetail'} roleId={'editor'} />
+            <div
+                className={css`
                         width: 460px;
-                        background-color: #fff;
                     `}
-                >
-                    <LongTextField
-                        id={'fld1'}
-                        contextId={'recordDetail'}
-                        roleId={'readOnly'}
-                        longText={`Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
-                    />
-                </div>
-            </Viewport>
-            <h3>
-                RecordGalleryCard context
-            </h3>
-            <p>Used for displaying a long text in a record gallery card.</p>
-            <h4>
-                Read only role
-            </h4>
-            <Viewport>
-                <div
-                    className={css`
-                        width: 240px;
-                        height: 78px;
-                        background-color: #fff;
+            >
+                <LongTextField
+                    id={'fld1'}
+                    contextId={'recordDetail'}
+                    roleId={'editor'}
+                    longText={this.state.longText}
+                    onChange={({longText}) => this.setState({longText})}
+                />
+            </div>
+            <Context contextId={'recordDetail'} roleId={'editor'} />
+            <div
+                className={css`
+                        width: 460px;
                     `}
-                >
-                    <LongTextField
-                        id={'fld1'}
-                        contextId={'recordGalleryCard'}
-                        roleId={'readOnly'}
-                        longText={`Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
-                    />
-                </div>
-            </Viewport>
-            <h3>
-                RecordListItem context
-            </h3>
-            <p>Used for displaying a long text in a record list item.</p>
-            <h4>
-                Read only role
-            </h4>
-            <Viewport>
-                <div
-                    className={css`
+            >
+                <LongTextField
+                    id={'fld1'}
+                    contextId={'recordDetail'}
+                    roleId={'editor'}
+                    longText={this.state.longText}
+                    onChange={({longText}) => this.setState({longText})}
+                />
+            </div>
+            <Context contextId={'recordDetail'} roleId={'readOnly'} />
+            <div
+                className={css`
+                        width: 460px;
+                    `}
+            >
+                <LongTextField
+                    id={'fld1'}
+                    contextId={'recordDetail'}
+                    roleId={'readOnly'}
+                    longText={this.state.longText}
+                />
+            </div>
+            <Context contextId={'recordGalleryCard'} roleId={'readOnly'} />
+            <div
+                className={css`
+                    width: 240px;
+                    height: 78px;
+                `}
+            >
+                <LongTextField
+                    id={'fld1'}
+                    contextId={'recordGalleryCard'}
+                    roleId={'readOnly'}
+                    longText={this.state.longText}
+                />
+            </div>
+            <Context contextId={'recordListItem'} roleId={'readOnly'} />
+            <div
+                className={css`
                         width: 240px;
                         height: 24px;
-                        background-color: #fff;
                     `}
-                >
-                    <LongTextField
-                        id={'fld1'}
-                        contextId={'recordListItem'}
-                        roleId={'readOnly'}
-                        longText={`Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
-                    />
-                </div>
-            </Viewport>
+            >
+                <LongTextField
+                    id={'fld1'}
+                    contextId={'recordListItem'}
+                    roleId={'readOnly'}
+                    longText={this.state.longText}
+                />
+            </div>
         </div>
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import {css} from 'emotion'
+import replaceLinebreaks from '../../replaceLinebreaks'
 
 export default class LongTextField extends React.Component {
 
@@ -19,15 +20,9 @@ export default class LongTextField extends React.Component {
                     color: #111111;
                     cursor: default;
                     outline: none;
-                    display: -webkit-box;
-                    display: -webkit-flex;
-                    display: -ms-flexbox;
                     display: flex;
-                    -webkit-flex-wrap: wrap;
-                    -ms-flex-wrap: wrap;
                     flex-wrap: wrap;
                     width: 100%;
-                    cursor: pointer;
                     background: transparent;
                     text-overflow: ellipsis;
                     overflow: visible;
@@ -58,7 +53,7 @@ export default class LongTextField extends React.Component {
                             maxHeight: 78
                         }}
                     >
-                        {longText}
+                        {replaceLinebreaks(longText)}
                     </div>
                 </div>
             </div>

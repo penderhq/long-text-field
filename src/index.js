@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import RecordDetailEditor from './contexts/recordDetail/editor'
 import RecordDetailReadOnly from './contexts/recordDetail/readOnly'
 import RecordGalleryCard from './contexts/recordGalleryCard'
 import RecordListItem from './contexts/recordListItem'
@@ -17,6 +18,15 @@ export default class LongTextField extends React.Component {
     render() {
 
         const {contextId, roleId} = this.props
+
+        if (contextId === 'recordDetail' && roleId === 'editor') {
+
+            return (
+                <RecordDetailEditor
+                    {...this.props}
+                />
+            )
+        }
 
         if (contextId === 'recordDetail' && roleId === 'readOnly') {
 

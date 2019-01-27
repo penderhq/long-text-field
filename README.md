@@ -12,7 +12,7 @@ Used for entering multiple lines of text.
 | contextId | Context | ✓ | The appearance will change depending on context in which the field is displayed. Valid options include: `recordDetail` or `recordGridRow` or `recordGalleryCard` or `recordListItem` |
 | roleId | Role | ✓ | The behaviour changes based on the role. Valid options include `editor` or `readOnly` |
 | longText | String | | Contents to be displayed / edited |
-| onChange | Function |  | Callback invoked whenever the checkbox get's toggled. : `({id: string, value: boolean}): void` |
+| onChange | Function |  | Callback invoked whenever the long text changes. : `({id: string, longText: boolean}): void` |
 
 ### More information
 
