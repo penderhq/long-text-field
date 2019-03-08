@@ -1,6 +1,6 @@
 import React from 'react'
 import trim from 'lodash/trim'
-import {css} from 'emotion'
+import {css, cx} from 'emotion'
 import {stateToMarkdown} from 'draft-js-export-markdown'
 import {stateFromMarkdown} from 'draft-js-import-markdown'
 
@@ -31,17 +31,30 @@ class RichTextInput extends React.Component {
     render() {
         return (
             <div
-                className={css`
-                    padding: 16px;
-                    width: 100%;
-                    background-color: rgba(0, 0, 0, 0.05);
-                    border: 2px solid transparent;
-                    box-shadow: none;
+                className={cx(
+                    css`
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    -webkit-transition: border-color .15s ease-in-out;
+                    appearance: none;
+                    background-color: #fff;
+                    border: 1px solid #d9d9d9;
                     border-radius: 3px;
-                    -webkit-appearane: none;
+                    color: #191919;
+                    display: block;
+                    font-size: 16px;
+                    line-height: 1.42857;
+                    padding: 16px;
+                    transition: border-color .15s ease-in-out;
+                    width: 100%;
                     line-height: 1.5;
-                    ${this.state.focus ? 'border-color: rgba(0, 0, 0, 0.05);' : ''}
-                `}
+                `, this.state.focus ? css`
+                      -webkit-transition-duration: 0s;
+                        border-color: #07f;
+                        outline: 0;
+                        transition-duration: 0s;
+                    ` : null
+                )}
             >
                 <Editor
                     editorState={this.state.editorState}
