@@ -34,13 +34,6 @@ export default class TextArea extends React.Component {
 
         const value = this.props.value || ''
 
-        const lines = value.split(/\r*\n/)
-
-        console.log({
-            lines,
-            lineCount: lines.length
-        })
-
         return (
             <textarea
                 className={css`
@@ -67,7 +60,9 @@ export default class TextArea extends React.Component {
                     }
                 `}
                 style={{
-                    height: this.state.height - 10
+                    height: this.state.height - 10,
+                    minHeight: 200,
+                    maxHeight: 580
                 }}
                 value={value}
                 onChange={e => this.props.onChange({value: e.target.value})}

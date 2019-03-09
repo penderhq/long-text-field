@@ -6,16 +6,6 @@ import RecordDetailReadOnly from './contexts/recordDetail/readOnly'
 import RecordGalleryCard from './contexts/recordGalleryCard'
 import RecordListItem from './contexts/recordListItem'
 
-injectGlobal`
-    .long-text-field__preview a {
-        color: #07f;
-    }
-    
-    .long-text-field__preview img {
-        max-width: 100%;
-    }
-`
-
 export default class LongTextField extends React.Component {
 
     static propTypes = {
