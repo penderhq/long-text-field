@@ -26,7 +26,7 @@ const Context = ({contextId, roleId}) => (
 class Demo extends Component {
 
     state = {
-        longText: "This is a long text.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit,\n\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n​\n\n​\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "longText": "## This is a long text.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n### Bullet points\n\n- Bullet point 1\n- Bullet point 2\n- Bullet point 3​\n\n![Test Image](https://source.unsplash.com/1600x900/?nature,water)\n\n[Test Link](https://source.unsplash.com/1600x900/?nature,water)\n\n​\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
 
     render() {
@@ -34,7 +34,11 @@ class Demo extends Component {
             <h1>LongTextField Demo</h1>
             <p>Used for entering multiple lines of text.</p>
             <h2>State</h2>
-            <pre>
+            <pre
+                className={css`
+                    white-space: normal;
+                `}
+            >
                 {JSON.stringify(this.state, null, 2)}
             </pre>
             <Context contextId={'recordDetail'} roleId={'editor'} />

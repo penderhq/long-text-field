@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
+import Preview from '../../Preview'
 
 export default class LongTextField extends React.Component {
 
@@ -8,16 +8,9 @@ export default class LongTextField extends React.Component {
         const {longText} = this.props
 
         return (
-            <div
-                data-context-id={this.props.contextId}
-                data-role-id={this.props.roleId}
-            >
-                <div>
-                    <ReactMarkdown
-                        source={longText}
-                    />
-                </div>
-            </div>
+            <Preview
+                value={longText}
+            />
         )
     }
 }
