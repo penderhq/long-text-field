@@ -1,6 +1,6 @@
 {
   "name": "@cmds/long-text-field",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Used for entering multiple lines of text.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -21,6 +21,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "@cmds/demo-utils": "^0.2.0",
     "emotion": "^9.2.12",
     "lodash": "^4.17.11",
     "react-markdown": "^4.0.6"

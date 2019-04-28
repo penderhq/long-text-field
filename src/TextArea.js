@@ -62,7 +62,7 @@ export default class TextArea extends React.Component {
                 style={{
                     height: this.state.height - 10,
                     minHeight: 200,
-                    maxHeight: 580
+                    maxHeight: 600
                 }}
                 value={value}
                 onChange={e => this.props.onChange({value: e.target.value})}

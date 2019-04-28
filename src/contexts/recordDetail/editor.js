@@ -22,7 +22,7 @@ const TabItem = ({onClick, active, children}) => (
 export default class RecordDetail extends React.Component {
 
     state = {
-        editing: true
+        editing: false
     }
 
     render() {

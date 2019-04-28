@@ -12,7 +12,7 @@ export default class LongTextField extends React.Component {
             <div
                 className={css`
                     font-size: 13px;
-                    height: 32px;
+                    height: 74px;
                     padding: 0;
                     margin: 0;
                     vertical-align: top;

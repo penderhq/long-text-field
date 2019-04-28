@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Canvas, Paragraph, Box, Heading} from '@cmds/demo-utils'
 import {render} from 'react-dom'
 import {css, injectGlobal} from 'emotion'
 import LongTextField from '../../src'
@@ -9,6 +10,7 @@ injectGlobal`
     }
     body {
         font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        margin: 0;
     }
 `
 
@@ -30,87 +32,74 @@ class Demo extends Component {
     }
 
     render() {
-        return <div>
-            <h1>LongTextField Demo</h1>
-            <p>Used for entering multiple lines of text.</p>
-            <h2>State</h2>
-            <pre
-                className={css`
+        return <Canvas>
+            <Heading>
+                Record Detail Context
+            </Heading>
+            <Paragraph>
+                With editor role
+            </Paragraph>
+            <Box>
+                <LongTextField
+                    id={'fld1'}
+                    contextId={'recordDetail'}
+                    roleId={'editor'}
+                    longText={this.state.longText}
+                    onChange={({longText}) => this.setState({longText})}
+                />
+            </Box>
+            <Paragraph>
+                State
+            </Paragraph>
+            <Box>
+                <pre
+                    className={css`
                     white-space: normal;
                 `}
-            >
+                >
                 {JSON.stringify(this.state, null, 2)}
             </pre>
-            <Context contextId={'recordDetail'} roleId={'editor'} />
-            <div
-                className={css`
-                        width: 460px;
-                    `}
-            >
-                <LongTextField
-                    id={'fld1'}
-                    contextId={'recordDetail'}
-                    roleId={'editor'}
-                    longText={this.state.longText}
-                    onChange={({longText}) => this.setState({longText})}
-                />
-            </div>
-            <Context contextId={'recordDetail'} roleId={'editor'} />
-            <div
-                className={css`
-                        width: 460px;
-                    `}
-            >
-                <LongTextField
-                    id={'fld1'}
-                    contextId={'recordDetail'}
-                    roleId={'editor'}
-                    longText={this.state.longText}
-                    onChange={({longText}) => this.setState({longText})}
-                />
-            </div>
-            <Context contextId={'recordDetail'} roleId={'readOnly'} />
-            <div
-                className={css`
-                        width: 460px;
-                    `}
-            >
+            </Box>
+            <Paragraph>
+                With read only role
+            </Paragraph>
+            <Box>
                 <LongTextField
                     id={'fld1'}
                     contextId={'recordDetail'}
                     roleId={'readOnly'}
                     longText={this.state.longText}
                 />
-            </div>
-            <Context contextId={'recordGalleryCard'} roleId={'readOnly'} />
-            <div
-                className={css`
-                    width: 240px;
-                    height: 78px;
-                `}
-            >
+            </Box>
+            <Heading>
+                Record Gallery Card Context
+            </Heading>
+            <Paragraph>
+                With read only role
+            </Paragraph>
+            <Box>
                 <LongTextField
                     id={'fld1'}
                     contextId={'recordGalleryCard'}
                     roleId={'readOnly'}
                     longText={this.state.longText}
                 />
-            </div>
-            <Context contextId={'recordListItem'} roleId={'readOnly'} />
-            <div
-                className={css`
-                        width: 240px;
-                        height: 24px;
-                    `}
-            >
+            </Box>
+            <Heading>
+                Record List Item Context
+            </Heading>
+            <Paragraph>
+                With read only role
+            </Paragraph>
+            <Box>
                 <LongTextField
                     id={'fld1'}
                     contextId={'recordListItem'}
                     roleId={'readOnly'}
                     longText={this.state.longText}
                 />
-            </div>
-        </div>
+            </Box>
+        </Canvas>
     }
 }
 
