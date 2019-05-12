@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '@cmds/button'
+import Button from '@pndr/button'
 import {css} from 'emotion'
 import TextArea from '../../TextArea'
 import Preview from '../../Preview'
@@ -22,7 +22,7 @@ const TabItem = ({onClick, active, children}) => (
 export default class RecordDetail extends React.Component {
 
     state = {
-        editing: false
+        editing: true
     }
 
     render() {
@@ -33,7 +33,7 @@ export default class RecordDetail extends React.Component {
                     className={css`
                         display: flex;
                         align-items: center;
-                        margin-bottom: 8px;
+                        margin-bottom: 24px;
                     `}
                 >
                     <TabItem active={this.state.editing} onClick={() => this.setState({editing: true})}>

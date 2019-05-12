@@ -1,5 +1,5 @@
 {
-  "name": "@cmds/long-text-field",
+  "name": "@pndr/long-text-field",
   "version": "0.8.0",
   "description": "Used for entering multiple lines of text.",
   "main": "lib/index.js",
@@ -11,7 +11,7 @@
     "umd"
   ],
   "scripts": {
-    "deploy": "cd demo/dist && surge --project ./ --domain cmds-long-text-field.surge.sh",
+    "deploy": "cd demo/dist && surge --project ./ --domain pndr-long-text-field.surge.sh",
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
@@ -21,8 +21,8 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@cmds/demo-utils": "^0.2.0",
-    "emotion": "^9.2.12",
+    "@pndr/demo-utils": "^0.3.0",
+    "emotion": "^10.0.9",
     "lodash": "^4.17.11",
     "react-markdown": "^4.0.6"
   },
@@ -30,7 +30,7 @@
     "react": "16.x"
   },
   "devDependencies": {
-    "@cmds/button": "^0.1.0",
+    "@pndr/button": "^0.5.0",
     "nwb": "0.23.x",
     "react": "^16.6.1",
     "react-dom": "^16.6.1"

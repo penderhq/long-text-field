@@ -1,6 +1,7 @@
 import React from 'react'
 import {css} from 'emotion'
 import replaceLinebreaks from '../../replaceLinebreaks'
+import defaultEmptyRenderer from '../../defaultEmptyRenderer';
 
 export default class LongTextField extends React.Component {
 
@@ -8,22 +9,22 @@ export default class LongTextField extends React.Component {
 
         const {longText} = this.props
 
+        if (!longText) {
+            return defaultEmptyRenderer()
+        }
+
         return (
             <div
                 className={css`
-                    font-size: 13px;
                     height: 74px;
                     padding: 0;
                     margin: 0;
                     vertical-align: top;
                     background: white;
-                    color: #111111;
-                    cursor: default;
                     outline: none;
                     display: flex;
                     flex-wrap: wrap;
                     width: 100%;
-                    background: transparent;
                     text-overflow: ellipsis;
                     overflow: visible;
                     position: relative;

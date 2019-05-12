@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import {Canvas, Paragraph, Box, Heading} from '@cmds/demo-utils'
-import {render} from 'react-dom'
-import {css, injectGlobal} from 'emotion'
+import React, { Component } from 'react'
+import { Canvas, Paragraph, Box, Heading } from '@pndr/demo-utils'
+import { render } from 'react-dom'
+import { css, injectGlobal } from 'emotion'
 import LongTextField from '../../src'
 
 injectGlobal`
@@ -14,7 +14,7 @@ injectGlobal`
     }
 `
 
-const Context = ({contextId, roleId}) => (
+const Context = ({ contextId, roleId }) => (
     <div
         className={css`
             margin-top: 32px;
@@ -45,7 +45,7 @@ class Demo extends Component {
                     contextId={'recordDetail'}
                     roleId={'editor'}
                     longText={this.state.longText}
-                    onChange={({longText}) => this.setState({longText})}
+                    onChange={({ longText }) => this.setState({ longText })}
                 />
             </Box>
             <Paragraph>
@@ -57,8 +57,8 @@ class Demo extends Component {
                     white-space: normal;
                 `}
                 >
-                {JSON.stringify(this.state, null, 2)}
-            </pre>
+                    {JSON.stringify(this.state, null, 2)}
+                </pre>
             </Box>
             <Paragraph>
                 With read only role
@@ -71,6 +71,28 @@ class Demo extends Component {
                     longText={this.state.longText}
                 />
             </Box>
+            <Paragraph>
+                Empty with editor role
+            </Paragraph>
+            <Box>
+                <LongTextField
+                    id={'fld1'}
+                    contextId={'recordDetail'}
+                    roleId={'editor'}
+                    longText={null}
+                />
+            </Box>
+            <Paragraph>
+                Empty with read only role
+            </Paragraph>
+            <Box>
+                <LongTextField
+                    id={'fld1'}
+                    contextId={'recordDetail'}
+                    roleId={'readOnly'}
+                    longText={null}
+                />
+            </Box>
             <Heading>
                 Record Gallery Card Context
             </Heading>
@@ -78,12 +100,35 @@ class Demo extends Component {
                 With read only role
             </Paragraph>
             <Box>
-                <LongTextField
-                    id={'fld1'}
-                    contextId={'recordGalleryCard'}
-                    roleId={'readOnly'}
-                    longText={this.state.longText}
-                />
+                <div
+                    className={css`
+                        font-size: 13px;
+                    `}
+                >
+                    <LongTextField
+                        id={'fld1'}
+                        contextId={'recordGalleryCard'}
+                        roleId={'readOnly'}
+                        longText={this.state.longText}
+                    />
+                </div>
+            </Box>
+            <Paragraph>
+                Empty with read only role
+            </Paragraph>
+            <Box>
+                <div
+                    className={css`
+                        font-size: 13px;
+                    `}
+                >
+                    <LongTextField
+                        id={'fld1'}
+                        contextId={'recordGalleryCard'}
+                        roleId={'readOnly'}
+                        longText={null}
+                    />
+                </div>
             </Box>
             <Heading>
                 Record List Item Context
@@ -92,15 +137,38 @@ class Demo extends Component {
                 With read only role
             </Paragraph>
             <Box>
-                <LongTextField
-                    id={'fld1'}
-                    contextId={'recordListItem'}
-                    roleId={'readOnly'}
-                    longText={this.state.longText}
-                />
+                <div
+                    className={css`
+                        font-size: 13px;
+                    `}
+                >
+                    <LongTextField
+                        id={'fld1'}
+                        contextId={'recordListItem'}
+                        roleId={'readOnly'}
+                        longText={this.state.longText}
+                    />
+                </div>
+            </Box>
+            <Paragraph>
+                Emty with read only role
+            </Paragraph>
+            <Box>
+                <div
+                    className={css`
+                        font-size: 13px;
+                    `}
+                >
+                    <LongTextField
+                        id={'fld1'}
+                        contextId={'recordListItem'}
+                        roleId={'readOnly'}
+                        longText={null}
+                    />
+                </div>
             </Box>
         </Canvas>
     }
 }
 
-render(<Demo/>, document.querySelector('#demo'))
+render(<Demo />, document.querySelector('#demo'))

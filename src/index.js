@@ -1,5 +1,4 @@
 import React from 'react'
-import {injectGlobal} from 'emotion'
 import PropTypes from 'prop-types'
 import RecordDetailEditor from './contexts/recordDetail/editor'
 import RecordDetailReadOnly from './contexts/recordDetail/readOnly'
