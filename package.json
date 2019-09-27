@@ -1,6 +1,6 @@
 {
   "name": "@pndr/long-text-field",
-  "version": "0.8.0",
+  "version": "0.11.0",
   "description": "Used for entering multiple lines of text.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -21,16 +21,12 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@pndr/demo-utils": "^0.3.0",
-    "emotion": "^10.0.9",
-    "lodash": "^4.17.11",
     "react-markdown": "^4.0.6"
   },
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
-    "@pndr/button": "^0.5.0",
     "nwb": "0.23.x",
     "react": "^16.6.1",
     "react-dom": "^16.6.1"

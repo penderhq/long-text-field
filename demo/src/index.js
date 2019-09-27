@@ -14,17 +14,6 @@ injectGlobal`
     }
 `
 
-const Context = ({ contextId, roleId }) => (
-    <div
-        className={css`
-            margin-top: 32px;
-            margin-bottom: 24px;
-        `}
-    >
-        <strong>Context:</strong> {contextId}, <strong>Role:</strong> {roleId}
-    </div>
-)
-
 class Demo extends Component {
 
     state = {
@@ -40,13 +29,21 @@ class Demo extends Component {
                 With editor role
             </Paragraph>
             <Box>
-                <LongTextField
-                    id={'fld1'}
-                    contextId={'recordDetail'}
-                    roleId={'editor'}
-                    longText={this.state.longText}
-                    onChange={({ longText }) => this.setState({ longText })}
-                />
+                <div
+                    className={css`
+                        background-color: #f9f9f9;
+                        padding: 20px;
+                    `}
+                >
+                    <LongTextField
+                        id={'fld1'}
+                        contextId={'recordDetail'}
+                        roleId={'editor'}
+                        longText={this.state.longText}
+                        onChange={({ longText }) => this.setState({ longText })}
+                    />
+                </div>
+
             </Box>
             <Paragraph>
                 State
@@ -64,34 +61,56 @@ class Demo extends Component {
                 With read only role
             </Paragraph>
             <Box>
-                <LongTextField
-                    id={'fld1'}
-                    contextId={'recordDetail'}
-                    roleId={'readOnly'}
-                    longText={this.state.longText}
-                />
+                <div
+                    className={css`
+                        background-color: #f9f9f9;
+                        padding: 20px;
+                    `}
+                >
+                    <LongTextField
+                        id={'fld1'}
+                        contextId={'recordDetail'}
+                        roleId={'readOnly'}
+                        longText={this.state.longText}
+                    />
+                </div>
             </Box>
             <Paragraph>
                 Empty with editor role
             </Paragraph>
             <Box>
-                <LongTextField
-                    id={'fld1'}
-                    contextId={'recordDetail'}
-                    roleId={'editor'}
-                    longText={null}
-                />
+                <div
+                    className={css`
+                        background-color: #f9f9f9;
+                        padding: 20px;
+                    `}
+                >
+                    <LongTextField
+                        id={'fld1'}
+                        contextId={'recordDetail'}
+                        roleId={'editor'}
+                        longText={null}
+                    />
+                </div>
             </Box>
             <Paragraph>
                 Empty with read only role
             </Paragraph>
             <Box>
-                <LongTextField
-                    id={'fld1'}
-                    contextId={'recordDetail'}
-                    roleId={'readOnly'}
-                    longText={null}
-                />
+                <div
+                    className={css`
+                        background-color: #f9f9f9;
+                        padding: 20px;
+                    `}
+                >
+                    <LongTextField
+                        id={'fld1'}
+                        contextId={'recordDetail'}
+                        roleId={'readOnly'}
+                        longText={null}
+                    />
+                </div>
+
             </Box>
             <Heading>
                 Record Gallery Card Context
@@ -103,6 +122,7 @@ class Demo extends Component {
                 <div
                     className={css`
                         font-size: 13px;
+                        height: 74px;
                     `}
                 >
                     <LongTextField
@@ -120,6 +140,7 @@ class Demo extends Component {
                 <div
                     className={css`
                         font-size: 13px;
+                        height: 74px;
                     `}
                 >
                     <LongTextField

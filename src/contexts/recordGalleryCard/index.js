@@ -1,5 +1,5 @@
 import React from 'react'
-import {css} from 'emotion'
+import { css } from 'emotion'
 import replaceLinebreaks from '../../replaceLinebreaks'
 import defaultEmptyRenderer from '../../defaultEmptyRenderer';
 
@@ -7,10 +7,21 @@ export default class LongTextField extends React.Component {
 
     render() {
 
-        const {longText} = this.props
+        const { longText } = this.props
 
         if (!longText) {
-            return defaultEmptyRenderer()
+            
+            return (
+                <div
+                    className={css`
+                        height: 22px;
+                        display: flex;
+                        align-items: center;
+                    `}
+                >
+                    {defaultEmptyRenderer()}
+                </div>
+            )
         }
 
         return (

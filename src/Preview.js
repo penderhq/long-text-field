@@ -1,11 +1,27 @@
 import React from 'react'
-import {css, cx} from 'emotion'
+import { css, cx } from 'emotion'
 import ReactMarkdown from 'react-markdown'
 import defaultEmptyRenderer from './defaultEmptyRenderer';
 
 export default class Preview extends React.Component {
 
     render() {
+
+        return (
+            <div
+                className={css`
+            background-color: #fff;
+            padding: 16px;
+            border: 1px solid #d9d9d9;
+            border-radius: 3px;
+        `}
+            >
+                {this.renderContent()}
+            </div>
+        )
+    }
+
+    renderContent() {
 
         if (!this.props.value) {
             return defaultEmptyRenderer()

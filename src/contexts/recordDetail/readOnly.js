@@ -5,7 +5,7 @@ export default class LongTextField extends React.Component {
 
     render() {
 
-        const {longText} = this.props
+        const { longText } = this.props
 
         return (
             <Preview
