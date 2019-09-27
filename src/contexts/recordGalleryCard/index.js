@@ -10,18 +10,7 @@ export default class LongTextField extends React.Component {
         const { longText } = this.props
 
         if (!longText) {
-            
-            return (
-                <div
-                    className={css`
-                        height: 22px;
-                        display: flex;
-                        align-items: center;
-                    `}
-                >
-                    {defaultEmptyRenderer()}
-                </div>
-            )
+            return defaultEmptyRenderer()
         }
 
         return (
