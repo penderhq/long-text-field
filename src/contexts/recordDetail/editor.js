@@ -1,16 +1,18 @@
 import React from 'react'
 import Button from '@pndr/button'
-import {css} from 'emotion'
+import { css } from 'emotion'
 import TextArea from '../../TextArea'
 import Preview from '../../Preview'
 
-const TabItem = ({onClick, active, children}) => (
+const TabItem = ({ onClick, active, children }) => (
     <div
         className={css`
             margin-right: 8px;
         `}
     >
         <Button
+            size={'sm'}
+            minimal={true}
             highlighted={active}
             onClick={onClick}
         >
@@ -36,11 +38,11 @@ export default class RecordDetail extends React.Component {
                         margin-bottom: 24px;
                     `}
                 >
-                    <TabItem active={this.state.editing} onClick={() => this.setState({editing: true})}>
-                        Write
+                    <TabItem active={this.state.editing} onClick={() => this.setState({ editing: true })}>
+                        {this.props.writeButtonLabel}
                     </TabItem>
-                    <TabItem active={!this.state.editing} onClick={() => this.setState({editing: false})}>
-                        Preview
+                    <TabItem active={!this.state.editing} onClick={() => this.setState({ editing: false })}>
+                        {this.props.previewButtonLabel}
                     </TabItem>
                 </div>
                 <div>
@@ -60,7 +62,7 @@ export default class RecordDetail extends React.Component {
         )
     }
 
-    handleChange = ({value}) => {
+    handleChange = ({ value }) => {
 
         if (!this.props.onChange) {
             return

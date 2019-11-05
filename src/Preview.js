@@ -12,8 +12,9 @@ export default class Preview extends React.Component {
                 className={css`
             background-color: #fff;
             padding: 16px;
-            border: 1px solid #d9d9d9;
-            border-radius: 3px;
+            border: none;
+            box-shadow: 0 0 0 1px rgba(0,0,0,.09), 0 1px 0 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1);
+            border-radius: 6px;
         `}
             >
                 {this.renderContent()}

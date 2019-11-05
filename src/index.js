@@ -12,7 +12,14 @@ export default class LongTextField extends React.Component {
         contextId: PropTypes.oneOf(['recordDetail', 'recordGridRow', 'recordGalleryCard', 'recordListItem']),
         roleId: PropTypes.oneOf(['editor', 'readOnly']),
         longText: PropTypes.string,
-        onChange: PropTypes.func
+        onChange: PropTypes.func,
+        writeButtonLabel: PropTypes.string,
+        previewButtonLabel: PropTypes.string
+    }
+
+    static defaultProps = {
+        writeButtonLabel: 'Write',
+        previewButtonLabel: 'Preview'
     }
 
     render() {
